@@ -1,0 +1,79 @@
+import java.util.*;
+import java.util.stream.*;
+
+class student {
+
+	String name;
+	int age;
+	static String teacher;
+	static String place;
+
+	void display() {
+
+		System.out.println("Name = " + name);
+		System.out.println("Age = " + age);
+		System.out.println("Teacher Name = " + teacher);
+		System.out.println("Place =" + place);
+
+	}
+	
+	
+	
+	// static Block
+	static {
+		
+		student.place = "Chennai";
+		
+	}
+	
+	// This static block will be executed  at function or Class When started to loaded.
+	// and it is not also declared explicitly like through object or Class Name. But it will be Printed. As it is an Default Value.
+	// This static block will be Common all the objects Created. (i.e : obj1, obj2 ...)
+
+}
+
+public class staticDemo {
+
+	public static void main(String[] args) {
+		// FYI - static Key Word - In public static void main(String[] args) - 
+		// Because - we no need to create an object
+		// It will be executed when the Class is loaded.
+
+		// *Note
+		// To Create a Object Steps
+		// 1. ClassName - student 2. objectName - obj 3. Constructor - student();
+		// new -> new keyword is for creating an new Memory address or Reference in heap
+		// and stack Memory inside JVM - Java Virtual Machine.
+
+		// Usage :
+		// 1. It Will Make the Universal Changes for a particular variable declared as
+		// static.
+		//2. Benifits we no need to create Objects.We can Directly Call by Class Name (Eg : student.teacher = "Dravid";)
+
+		student s1 = new student();
+		student s2 = new student();
+
+		s1.name = "Rohit";
+		s1.age = 19;
+		
+//		s1.teacher = "Ravi bhai"; // Ravi bhai
+		student.teacher = "Dravid"; 
+		// Called by Class Name Instead of Calling by object. 
+		// dravid --> It Prints also for s2.teacher because of declaring static keyword in the Top.
+		
+
+		// to make the updated new Changes in a value of an variable in all the related
+		// objects we create.Should be declare it with "static" keyword.
+
+		s2.name = "Dhawan";
+		s2.age = 20;
+//		s2.teacher = "Ravi bhai"; // ravi bhai
+//		s2.teacher = "Dravid"; // dravid
+
+		s1.display();
+		System.out.println("--------");
+		s2.display();
+
+	}
+
+}
