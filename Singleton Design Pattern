@@ -1,0 +1,65 @@
+import java.util.*;
+import java.util.stream.*;
+
+
+// For Testing Purpose
+
+//class a{
+//	
+//	SingletonCls obj = new SingletonCls();
+//	
+//}
+
+
+public class SingletonCls {
+
+	// As like POJO Class Similar difference.
+
+	private static SingletonCls instance;
+	// Note : For Creating an *Object it is *Necassery to create an *Constructor. Constructor is nothing but create a *method with its *ClassName.
+	// Note : *Private access modifer is used for accessablity within the Current Class level - FYI
+	//Like -->  "Main obj" = new Main(); --> First we are Initaiing a variable for the Object. Object are also called as "Instance";
+	// Intializing -> Is for Variable Initializing.
+	// initiating -> is for Object Values Initiating.
+	
+	// Singleton Constructor
+	private SingletonCls() {
+
+	}
+	
+	
+	// We create a method here works(Like : getterMethod) to pass through the Object through a method (i.e : getInstance() method).
+	public static SingletonCls getInstance() {
+		
+		if(instance == null) {
+			
+			instance = new SingletonCls();
+			
+			return instance;
+			
+			
+		}
+		
+		return instance;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		// Singleton - Design Pattern
+		// Only one (Instance (or) Object) will be create per Spring IOC Container, Same object will be shared for each request made for the bean.
+		
+		System.out.println(SingletonCls.getInstance());
+		System.out.println(SingletonCls.getInstance());
+		System.out.println(SingletonCls.getInstance());
+		
+		
+		// Result : Its should Print Same Memory Address
+		
+		
+	}
+	
+	
+	
+}
