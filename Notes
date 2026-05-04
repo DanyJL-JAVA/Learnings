@@ -1,0 +1,26 @@
+1. Create a Constructor To create an object.
+
+// POJO Class
+// EmployeeVo.java
+
+// Constructor // Constructor Name Should be same as the ClassName
+public EmployeeVo(int empId,String empName,int empAge,String branch,int empSalary,String bank){
+
+	this.empId = empId;
+	this.empName = empName;
+	this.empAge = empAge;
+	this.branch = branch;
+	this.empSalary = empSalary;
+	this.bank = bank;
+
+}
+// Constructor
+
+// object
+
+EmployeeVo empVo = new EmployeeVo();
+
+// object
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
