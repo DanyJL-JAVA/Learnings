@@ -1,0 +1,113 @@
+
+////////////////////////////////////////////////////Main.java (Class)/////////////////////////////////////////////
+
+package Office;
+
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+//		public Company(int registerNo, String empName, String place, List<String> skills) {
+
+		List<String> arrlst = new ArrayList<String>();
+		arrlst.add("moon");
+		arrlst.add("star");
+
+		Main obj = new Main();
+		Company comp = new Company(12, "hari", "chennai", arrlst);
+
+		arrlst.add("sun");
+		arrlst.add("mars");
+		comp.getSkills().add("venus"); // trying to add using getter() method
+
+		System.out.println(comp.getRegisterNo());
+		System.out.println(comp.getEmpName());
+		System.out.println(comp.getPlace());
+		System.out.println(comp.getSkills());
+
+	}
+
+}
+
+
+//////////////////////////////////////Company.java (class) ///////////////////////////////////////////////////
+
+package Office;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/// CREATING AN IMMUTABLE CLASS IN JAVA
+/// Immutable = Cannot be changed after creation.
+
+/// *Rules to Make a Class Immutable (5 - Rules)
+
+//1. Declare the class as final (Should not be extended -> "If someone extends the class, they might add methods that change the state.").
+//2. Make all fields private and final. (1. private = Only the class can access the variables. | 2. final = Value can be assigned only once. After assignment, value is fixed.)
+//3. Do not provide setter methods. (Getter means "read-only access". | User can read the value but cannot change it.)
+//4. Initialize fields through a constructor. (When object is created: On the Starting object created, onWards on the same time fields are Inserted So, no again seperatively injecting feilds value is avoided. )
+//5. Return "defensive copies"  (or : in other words : deeply copied) for mutable objects (like Date, List, etc.).
+//( final prevents reassigning the reference. It does NOT prevent modifying the contents.)
+
+public final class Company {
+
+	private final int registerNo;
+	private final String empName;
+	private final String place;
+	private final List<String> skills;
+
+	public Company(int registerNo, String empName, String place, List<String> skills) {
+
+		this.registerNo = registerNo;
+		this.empName = empName;
+		this.place = place;
+		this.skills = new ArrayList<>(skills);
+
+	}
+
+	// registerNo
+	public int getRegisterNo() {
+
+		return registerNo;
+
+	}
+
+	// empName
+	public String getEmpName() {
+
+		return empName;
+
+	}
+
+	// place
+	public String getPlace() {
+
+		return place;
+
+	}
+
+	public List<String> getSkills() {
+
+		// * Both return type are acceptable but Chose any one.
+
+//		return new ArrayList<>(skills); // --> [moon, star] {It wont add this}
+
+		// or
+
+		return Collections.unmodifiableList(skills); // -> UnsupportedOperationException
+
+		// These TWO because of, If the user try to add up new field in list by using
+		// the the getter() method? (i.e : comp.getSkills().add("venus");) -> To Prevent
+		// this.
+
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
