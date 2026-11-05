@@ -54,13 +54,13 @@ import java.util.List;
 //( final prevents reassigning the reference. It does NOT prevent modifying the contents.)
 Eg : 
 
-// prevents
-a = 20;
-b = a;
+// prevents (reassigning)
+// a = 20;
+// b = a;
 
-// Not Prevents
-a = 20;
-a = 30;
+// Not Prevents (modifying)
+// a = 20;
+// a = 30;
 
 public final class Company {
 
