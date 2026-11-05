@@ -52,6 +52,15 @@ import java.util.List;
 //4. Initialize fields through a constructor. (When object is created: On the Starting object created, onWards on the same time fields are Inserted So, no again seperatively injecting feilds value is avoided. )
 //5. Return "defensive copies"  (or : in other words : deeply copied) for mutable objects (like Date, List, etc.).
 //( final prevents reassigning the reference. It does NOT prevent modifying the contents.)
+Eg : 
+
+// prevents
+a = 20;
+b = a;
+
+// Not Prevents
+a = 20;
+a = 30;
 
 public final class Company {
 
