@@ -59,7 +59,25 @@ public class SingletonCls {
 		
 		
 	}
-	
-	
-	
+		
 }
+
+//*NOTE:
+
+// Advantages:
+
+// Saves memory
+// Avoids duplicate objects
+// Provides centralized access
+// Maintains consistent state across the application
+
+// Where do we use Singleton
+
+//Database Connection -> ConnectionManager cm = ConnectionManager.getInstance();
+//Configuration Settings -> ConfigManager config = ConfigManager.getInstance();
+//Logger -> Logger logger = Logger.getInstance();
+//Cache Manager -> CacheManager cache = CacheManager.getInstance();
+//Thread Pool
+
+// A good rule is: Use Singleton when multiple objects would represent the same shared resource and having more than one instance would be incorrect or wasteful.
+	
