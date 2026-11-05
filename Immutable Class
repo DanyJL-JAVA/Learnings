@@ -47,7 +47,7 @@ import java.util.List;
 /// *Rules to Make a Class Immutable (5 - Rules)
 
 //1. Declare the class as final (Should not be extended -> "If someone extends the class, they might add methods that change the state.").
-//2. Make all fields private and final. (1. private = Only the class can access the variables. | 2. final = Value can be assigned only once. After assignment, value is fixed.)
+//2. Make all fields private and final. (1. private = Only the Current class can access the variables. | 2. final = Value can be assigned only once. After assignment, value is fixed.)
 //3. Do not provide setter methods. (Getter means "read-only access". | User can read the value but cannot change it.)
 //4. Initialize fields through a constructor. (When object is created: On the Starting object created, onWards on the same time fields are Inserted So, no again seperatively injecting feilds value is avoided. )
 //5. Return "defensive copies"  (or : in other words : deeply copied) for mutable objects (like Date, List, etc.).
