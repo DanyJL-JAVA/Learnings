@@ -1,0 +1,57 @@
+
+1.To Import the New Maven Project =====================================================>
+
+Step 1 : Right Click in the Project Explorer tab -> New -> Project -> Maven -> Maven Project -> Browse -> Select the Project (Eg : E:\ProjectCpy\Projects-main\demo) -> Click Next. 
+
+
+Step 2 : Eclipse IDE – New Maven Project – Select an Archetype window.
+
+In the Filter box, type:
+
+maven-archetype-quickstart
+
+Then select:
+
+*Group Id: org.apache.maven.archetypes
+
+*Artifact Id: maven-archetype-quickstart
+
+*Version: Select the latest available version.
+
+
+Step 3 : Click Next
+
+On the next screen, fill in these details:
+
+Field   :       What to enter
+
+Group Id    -   com.example
+
+Artifact Id -   MyFirstProject
+
+Version     -   1.0-SNAPSHOT
+
+Package     -   com.example
+
+Step 4 : Click Finish, Eclipse will create your Maven project.
+
+You should then see:
+
+src/main/java – Your Java source code.
+
+src/test/java – Your test files.
+
+pom.xml – Maven dependencies and configuration.
+
+
+
+~ To Run the Project.
+
+Step 1 : Right Click on the "Project Name" -> Run as -> Maven Build -> Goals (Type): clean install -> Check in Console : BUILD SUCCESS.
+Step 2 : Right Click on the  "src/main/java" -> Run as -> Java Application.
+
+
+
+FYI -
+
+ ~ Use maven-archetype-quickstart for a basic Java Maven project.
